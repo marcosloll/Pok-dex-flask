@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Pokédex</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="pokedex">
+        <img
+          src="{{ url_for('static', filename='pokedex.png') }}"
+          alt="Pokédex"
+          class="pokedex-img"
+        />
+
+        <!-- Imagem do Pokémon (tela esquerda) -->
+        <div class="tela-pokemon">
+          <img id="pokemon-img" src="" alt="Pokémon" />
+        </div>
+
+        <!-- Nome e número (painel direito superior) -->
+        <div class="info-nome">
+          <span id="pokemon-numero">#001</span>
+          <span id="pokemon-nome">Bulbasaur</span>
+          <div id="pokemon-tipos"></div>
+        </div>
+
+        <div id="pokemon-stats"></div>
+        <div id="pokemon-extras"></div>
+
+        <!-- Campo de busca (barra branca) -->
+        <div class="busca">
+          <input type="text" id="input-busca" placeholder="Nome ou número..." />
+          <button id="btn-buscar">OK</button>
+        </div>
+
+        <!-- Botões Prev e Next (painéis verdes) -->
+        <div class="botoes">
+          <button id="btn-prev">Prev</button>
+          <button id="btn-next">Next</button>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+  </body>
+</html>
